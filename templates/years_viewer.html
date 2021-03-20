@@ -1,0 +1,23 @@
+{% extends "main.html" %}
+{% block content %}
+    {% if not hebrew_date %}
+        <div class="container">
+            You must select a date first!
+        </div>
+    {% else %}
+        <div class="container">
+            Your hebrew birth date is:
+            {{  hebrew_date }}
+        </div>
+        <div class="container">
+        <label>
+            The years in which your hebrew birthday will be in your gregorian one:
+        </label>
+            {% for i in years_list %}
+            <div class="item center">
+                {{ i }}
+            </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endblock %}
